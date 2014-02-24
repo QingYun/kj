@@ -72,6 +72,13 @@ public:
 
     handleEvents[index]->fulfiller.fulfill();
     handleEvents[index]->removeFromList();
+
+    for (auto i = index + 1; i < handles.size(); i++) {
+      if (WaitForSingleObject(handles[i], 0) == WAIT_OBJECT_0) {
+        handleEvents[i]->fulfiller.fulfill();
+        handleEvents[i]->removeFromList();
+      }
+    }
   }
 
 private:
