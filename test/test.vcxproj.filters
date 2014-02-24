@@ -60,5 +60,8 @@
     <ClCompile Include="gtest\src\gtest-all.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\async-win-test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

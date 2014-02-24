@@ -69,6 +69,7 @@
     <ClCompile Include="..\src\arena-test.cpp" />
     <ClCompile Include="..\src\array-test.cpp" />
     <ClCompile Include="..\src\async-test.cpp" />
+    <ClCompile Include="..\src\async-win-test.cpp" />
     <ClCompile Include="..\src\common-test.cpp" />
     <ClCompile Include="..\src\exception-test.cpp" />
     <ClCompile Include="..\src\function-test.cpp" />
