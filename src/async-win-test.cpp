@@ -33,7 +33,7 @@ TEST(AsyncWinTest, WaitForMultiListen) {
          ADD_FAILURE() << str(exception).cStr();
        });
 
-  HANDLE event = CreateEvent(nullptr, TRUE, FALSE, false);
+  HANDLE event = CreateEvent(nullptr, TRUE, FALSE, nullptr);
   KJ_DEFER({ CloseHandle(event); });
   SetEvent(event);
 
@@ -49,7 +49,7 @@ TEST(AsyncWinTest, WaitForMultiReceive) {
   KJ_DEFER({ CloseHandle(event1); });
   SetEvent(event1);
 
-  HANDLE event2 = CreateEvent(nullptr, TRUE, FALSE, false);
+  HANDLE event2 = CreateEvent(nullptr, TRUE, FALSE, nullptr);
   KJ_DEFER({ CloseHandle(event2); });
   SetEvent(event2);
 
@@ -80,7 +80,7 @@ TEST(AsyncWinTest, WaitForNoWait) {
   HANDLE event1 = CreateEvent(nullptr, TRUE, FALSE, nullptr);
   KJ_DEFER({ CloseHandle(event1); });
 
-  HANDLE event2 = CreateEvent(nullptr, TRUE, FALSE, false);
+  HANDLE event2 = CreateEvent(nullptr, TRUE, FALSE, nullptr);
   KJ_DEFER({ CloseHandle(event2); });
 
   int receivedCount = 0;
